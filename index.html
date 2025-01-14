@@ -9,12 +9,13 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
+            background: url('mahakumbh-background.jpg') no-repeat center center fixed;
+            background-size: cover;
             color: #333;
         }
 
         header {
-            background-color: #0066cc;
+            background-color: rgba(0, 102, 204, 0.9);
             color: white;
             padding: 1rem 0;
             text-align: center;
@@ -33,13 +34,46 @@
             margin: 0;
         }
 
+        nav {
+            background-color: rgba(0, 74, 153, 0.9);
+            color: white;
+            padding: 0.5rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
         .container {
             max-width: 1200px;
             margin: 2rem auto;
             padding: 1rem;
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.9);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
+        }
+
+        .last-updated {
+            text-align: right;
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .visitor-count {
+            text-align: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #0066cc;
         }
 
         .section-title {
@@ -109,8 +143,41 @@
         footer {
             text-align: center;
             padding: 1rem 0;
-            background-color: #0066cc;
+            background-color: rgba(0, 102, 204, 0.9);
             color: white;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .articles {
+                flex-direction: column;
+            }
+
+            .article-card {
+                flex: 1 1 100%;
+            }
+
+            .footfall-table {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header img {
+                height: 40px;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .visitor-count {
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
@@ -120,8 +187,22 @@
         <h1>Mahakumbh 2025 Tracker</h1>
     </header>
 
+    <nav>
+        <a href="#footfall-tracker">Footfall Tracker</a>
+        <a href="#articles">Articles</a>
+        <a href="#contact">Contact Us</a>
+    </nav>
+
     <div class="container">
-        <section class="footfall-tracker">
+        <div class="last-updated">
+            Last updated: <span id="last-updated-time">2025-01-14 10:00 AM</span>
+        </div>
+
+        <div class="visitor-count">
+            Total Visitors Today: <span id="visitor-count">43,200</span>
+        </div>
+
+        <section id="footfall-tracker" class="footfall-tracker">
             <h2 class="section-title">Daily Footfall Tracker</h2>
             <table class="footfall-table">
                 <thead>
@@ -135,21 +216,27 @@
                 <tbody>
                     <tr>
                         <td>2025-01-13</td>
-                        <td>Triveni Sangam</td>
-                        <td>1,50,00,00,000( 1.5 crore)</td>
-                        <td>PAUSH Purnima</td>
+                        <td>Main Ghat</td>
+                        <td>25,000</td>
+                        <td>Morning rituals</td>
                     </tr>
                     <tr>
-                        <td>2025-01-14</td>
-                        <td>Triveni Sangam</td>
-                        <td>3,50,00,00,000( 3.5 crore)</td>
-                        <td>MAKAR SANKRANTI</td>
+                        <td>2025-01-13</td>
+                        <td>Temple Area</td>
+                        <td>18,000</td>
+                        <td>Special prayers</td>
+                    </tr>
+                    <tr>
+                        <td>2025-01-12</td>
+                        <td>Main Ghat</td>
+                        <td>22,000</td>
+                        <td>Evening aarti</td>
                     </tr>
                 </tbody>
             </table>
         </section>
 
-        <section class="articles">
+        <section id="articles" class="articles">
             <h2 class="section-title">Articles on Mahakumbh</h2>
             <div class="articles">
                 <div class="article-card">
@@ -172,7 +259,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2025 Mahakumbh Tracker team</p>
+        <p>&copy; 2025 Mahakumbh Organizer Team</p>
     </footer>
 </body>
 </html>
